@@ -44,22 +44,23 @@ app.get("/api/favoriteShows", function (req, res) {
   return res.json(favoriteShows);
 });
 
-// Displays a single character, or shows "No character found"
-app.get("/api/characters/:character", function (req, res) {
+// Displays a single show, or shows "No show found"
+app.get("/api/favoriteShows/:id", function (req, res) {
   // Grab the selected parameter
-  var chosen = req.params.character;
+  var chosen = req.params.id;
   console.log(chosen);
 
   // Filter to show only the selected character
-  for (var i = 0; i < characters.length; i++) {
-    if (chosen === characters[i].routeName) {
-      return res.json(characters[i]);
+  for (var i = 0; i < favoriteShows.length; i++) {
+    if (chosen === favoriteShows[i].id) {
+      return res.json(favoriteShows[i]);
     }
   }
 
   // Otherwise display "No character found"
-  return res.send("No character found");
+  return res.send("No TV show found");
 });
+
 app.post("/api/newTvShow", function (req, res) {
   var newShow = req.body;
 
