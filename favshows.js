@@ -47,7 +47,7 @@ app.get("/api/favoriteShows", function (req, res) {
 // Displays a single show, or shows "No show found"
 app.get("/api/favoriteShows/:id", function (req, res) {
   // Grab the selected parameter
-  var chosen = req.params.id;
+  var chosen = parseInt(req.params.id);
   console.log(chosen);
 
   // Filter to show only the selected character
@@ -61,7 +61,7 @@ app.get("/api/favoriteShows/:id", function (req, res) {
   return res.send("No TV show found");
 });
 
-app.post("/api/newTvShow", function (req, res) {
+app.post("/api/newShow", function (req, res) {
   var newShow = req.body;
 
   console.log(newShow);
