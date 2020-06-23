@@ -1,0 +1,22 @@
+{
+  "name": "idk-man",
+  "version": "1.0.0",
+  "description": "",
+  "main": "favshows.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claritzaM/idk-man.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/claritzaM/idk-man/issues"
+  },
+  "homepage": "https://github.com/claritzaM/idk-man#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
