@@ -42,12 +42,12 @@ var favoriteShows = [
 // Routes
 // ===========================================================
 app.get("/", function (req, res) {
-  res.render("home.ejs");
+  return res.render("home.ejs");
 });
 
 // Displays all characters
 app.get("/api/favoriteShows", function (req, res) {
-  return res.json(favoriteShows);
+  return res.render("index.ejs");
 });
 
 // Displays a single show, or shows "No show found"
@@ -64,7 +64,11 @@ app.get("/api/favoriteShows/:id", function (req, res) {
   }
 
   // Otherwise display "No character found"
-  return res.send("No TV show found");
+  res.render("show.ejs");
+});
+
+app.get("/form", function (req, res) {
+  res.render("showsForm.ejs");
 });
 
 app.post("/api/favoriteShows", function (req, res) {
@@ -74,7 +78,7 @@ app.post("/api/favoriteShows", function (req, res) {
 
   favoriteShows.push(newShow);
 
-  res.json(newShow);
+  return res.send("Successfully added show");
 });
 
 // Listener
