@@ -3,6 +3,8 @@ var express = require("express");
 var app = express();
 var PORT = 3000;
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 // Data
 // ===========================================================
 var favoriteShows = [
@@ -61,7 +63,7 @@ app.get("/api/favoriteShows/:id", function (req, res) {
   return res.send("No TV show found");
 });
 
-app.post("/api/newShow", function (req, res) {
+app.post("/api/favoriteShows", function (req, res) {
   var newShow = req.body;
 
   console.log(newShow);
