@@ -19,12 +19,12 @@ var favoriteShows = [
   },
   {
     id: 2,
-    category: "comedy",
+    category: "Comedy",
     title: "Parks and Recreation",
   },
   {
     id: 3,
-    category: "comedy",
+    category: "Comedy",
     title: "The Office",
   },
   {
@@ -34,7 +34,7 @@ var favoriteShows = [
   },
   {
     id: 5,
-    category: "anime",
+    category: "Anime",
     title: "Full-metal",
   },
 ];
@@ -47,7 +47,7 @@ app.get("/", function (req, res) {
 
 // Displays all characters
 app.get("/api/favoriteShows", function (req, res) {
-  return res.render("index.ejs");
+  return res.render("index.ejs", { favoriteShows: favoriteShows });
 });
 
 // Displays a single show, or shows "No show found"
