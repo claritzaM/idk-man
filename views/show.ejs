@@ -1,1 +1,4 @@
 <h1>Show Details</h1>
+<% favoriteShows.forEach(function(show) { %>
+<li><%= show.id %> - <%= show.category %> - <%= show.title %></li>
+<% }); %>

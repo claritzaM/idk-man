@@ -42,7 +42,7 @@ var favoriteShows = [
 // Routes
 // ===========================================================
 app.get("/", function (req, res) {
-  return res.render("home.ejs");
+  return res.render("home.ejs", { user: "Samantha" });
 });
 
 // Displays all characters
@@ -64,7 +64,7 @@ app.get("/api/favoriteShows/:id", function (req, res) {
   }
 
   // Otherwise display "No character found"
-  res.render("show.ejs");
+  res.render("show.ejs", { show: show, message: "" });
 });
 
 app.get("/form", function (req, res) {
