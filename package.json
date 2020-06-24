@@ -4,6 +4,7 @@
   "description": "",
   "main": "favshows.js",
   "scripts": {
+    "start": "node favshows.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
